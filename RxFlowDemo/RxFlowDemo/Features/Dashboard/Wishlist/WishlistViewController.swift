@@ -25,11 +25,11 @@ class WishlistViewController: UIViewController, StoryboardBased, ViewModelBased 
         self.moviesTable.delegate = self
         self.moviesTable.dataSource = self
 
-        _ = Observable<Int>
-            .interval(.seconds(5), scheduler: MainScheduler.instance)
-            .take(until: self.rx.deallocating)
-            .map { _ in return DemoStep.fakeStep }
-            .bind(to: self.steps)
+//        _ = Observable<Int>
+//            .interval(.seconds(5), scheduler: MainScheduler.instance)
+//            .take(until: self.rx.deallocating)
+//            .map { _ in return DemoStep.fakeStep }
+//            .bind(to: self.steps)
     }
 
     @IBAction func sendNotification(_ sender: UIButton) {
@@ -52,12 +52,20 @@ class WishlistViewController: UIViewController, StoryboardBased, ViewModelBased 
     @IBAction func about(_ sender: UIButton) {
         self.about()
     }
+
+  @IBAction func sendADeeplinkMessage(_ sender: UIButton) {
+    sendADeeplinkMessage()
+  }
 }
 
 extension WishlistViewController: Stepper {
     private func about () {
         self.steps.accept(DemoStep.aboutIsRequired)
     }
+
+  private func sendADeeplinkMessage () {
+      self.steps.accept(DemoStep.tabSwitch(2))
+  }
 }
 
 extension WishlistViewController: UITableViewDelegate {

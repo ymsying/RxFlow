@@ -32,6 +32,8 @@ class DashboardFlow: Flow {
         switch step {
         case .dashboardIsRequired:
             return navigateToDashboard()
+        case .tabSwitch(let index):
+          return tabSwitch(index: index)
         default:
             return .none
         }
@@ -66,4 +68,29 @@ class DashboardFlow: Flow {
                                             .contribute(withNextPresentable: trendingFlow,
                                                         withNextStepper: trendingStepper)])
     }
+
+  private func tabSwitch(index: Int) -> FlowContributors {
+
+    self.rootViewController.selectedIndex = index
+
+    guard let navigationController = self.rootViewController.viewControllers?.last as? UINavigationController else { return .none }
+
+    // 直接进入flow的某一个step
+    let viewController = MovieDetailViewController.instantiate(withViewModel: MovieDetailViewModel(withMovieId: 21212),
+                                                               andServices: self.services)
+    viewController.title = viewController.viewModel.title
+
+    navigationController.pushViewController(viewController, animated: true)
+    return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
+
+    /*
+     // flow 仅作为入口， 如需flow节点直接使用
+     let trendingStepper = TrendingStepper()
+     let trendingFlow = TrendingFlow(withServices: self.services, andStepper: trendingStepper)
+     Flows.use(trendingFlow, when: .created) { detailVC in
+     navigationController.present(detailVC, animated: true)
+     }
+     return .one(flowContributor: .contribute(withNextPresentable: trendingFlow, withNextStepper: trendingStepper, allowStepWhenNotPresented: false))
+     */
+  }
 }

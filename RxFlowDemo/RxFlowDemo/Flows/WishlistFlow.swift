@@ -62,6 +62,8 @@ class WishlistFlow: Flow {
             return .none
         case .aboutIsRequired:
             return self.navigateToAbout()
+        case .tabSwitch(let index):
+          return .one(flowContributor: .forwardToParentFlow(withStep: DemoStep.tabSwitch(index)))
         case .aboutIsComplete:
             self.rootViewController.presentedViewController?.dismiss(animated: true)
             return .none

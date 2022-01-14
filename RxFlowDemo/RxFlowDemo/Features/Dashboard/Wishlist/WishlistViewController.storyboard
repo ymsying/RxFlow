@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vFf-Cc-3q4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vFf-Cc-3q4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,28 +20,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-2D-82B">
-                                <rect key="frame" x="0.0" y="0.0" width="334" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-EE-aIH">
-                                <rect key="frame" x="0.0" y="56" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="51" width="375" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="movieViewCell" rowHeight="117" id="bEP-Nr-J9n" customClass="MovieViewCell" customModule="RxFlowDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="117"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEP-Nr-J9n" id="LNN-S0-W9Q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startrek" translatesAutoresizingMaskIntoConstraints="NO" id="mOM-DE-cXy">
-                                                    <rect key="frame" x="15" y="11" width="345" height="95"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="95"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCi-ym-axr">
-                                                    <rect key="frame" x="15" y="11" width="345" height="95.5"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="95.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Star Trek Beyond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sm-Jf-XGA">
-                                                            <rect key="frame" x="0.0" y="75.5" width="345" height="20"/>
+                                                            <rect key="frame" x="0.0" y="75.5" width="343" height="20"/>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="5pZ-6f-HLf"/>
@@ -79,33 +79,43 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2y-tD-GeF">
-                                <rect key="frame" x="334" y="16" width="25" height="24"/>
+                                <rect key="frame" x="338" y="15" width="21" height="21"/>
                                 <connections>
                                     <action selector="about:" destination="vFf-Cc-3q4" eventType="touchUpInside" id="8QH-xj-KNY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVp-C9-yH3">
-                                <rect key="frame" x="105" y="629" width="165" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVp-C9-yH3">
+                                <rect key="frame" x="16" y="625" width="343" height="30"/>
                                 <state key="normal" title="Send a notification in 5s"/>
                                 <connections>
                                     <action selector="sendNotification:" destination="vFf-Cc-3q4" eventType="touchUpInside" id="cjm-An-LDg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ade-0i-Oer">
+                                <rect key="frame" x="16" y="595" width="343" height="30"/>
+                                <state key="normal" title="Send Deeplink For TabBar"/>
+                                <connections>
+                                    <action selector="sendADeeplinkMessage:" destination="vFf-Cc-3q4" eventType="touchUpInside" id="hMn-cp-G3z"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rat-2D-82B" firstAttribute="leading" secondItem="TRD-V9-6JA" secondAttribute="leading" id="0bF-GV-Gz4"/>
-                            <constraint firstItem="mVp-C9-yH3" firstAttribute="top" secondItem="iEi-EE-aIH" secondAttribute="bottom" constant="12" id="0bZ-KH-2Jr"/>
                             <constraint firstAttribute="trailing" secondItem="a2y-tD-GeF" secondAttribute="trailing" constant="16" id="6Gc-EZ-cnF"/>
                             <constraint firstItem="Rat-2D-82B" firstAttribute="top" secondItem="J3f-A1-1Yj" secondAttribute="bottom" id="Lqf-Fk-X8N"/>
                             <constraint firstItem="a2y-tD-GeF" firstAttribute="leading" secondItem="Rat-2D-82B" secondAttribute="trailing" symbolic="YES" id="PeL-uA-T3F"/>
                             <constraint firstAttribute="trailing" secondItem="iEi-EE-aIH" secondAttribute="trailing" id="UDX-Fn-due"/>
-                            <constraint firstItem="REd-hg-ejW" firstAttribute="top" secondItem="mVp-C9-yH3" secondAttribute="bottom" constant="8" symbolic="YES" id="UNh-sI-wSr"/>
+                            <constraint firstItem="REd-hg-ejW" firstAttribute="top" secondItem="mVp-C9-yH3" secondAttribute="bottom" constant="12" id="UNh-sI-wSr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ade-0i-Oer" secondAttribute="trailing" id="UcG-Zl-nzq"/>
+                            <constraint firstItem="ade-0i-Oer" firstAttribute="leading" secondItem="TRD-V9-6JA" secondAttribute="leadingMargin" id="V8R-Dh-ObY"/>
                             <constraint firstItem="iEi-EE-aIH" firstAttribute="top" secondItem="Rat-2D-82B" secondAttribute="bottom" id="X4D-oY-QCj"/>
-                            <constraint firstItem="mVp-C9-yH3" firstAttribute="centerX" secondItem="TRD-V9-6JA" secondAttribute="centerX" id="g3u-0q-mTC"/>
-                            <constraint firstItem="REd-hg-ejW" firstAttribute="top" secondItem="iEi-EE-aIH" secondAttribute="bottom" constant="50" id="hLg-9o-hRO"/>
+                            <constraint firstItem="mVp-C9-yH3" firstAttribute="leading" secondItem="TRD-V9-6JA" secondAttribute="leadingMargin" id="diP-ZO-7Bv"/>
+                            <constraint firstItem="mVp-C9-yH3" firstAttribute="top" secondItem="ade-0i-Oer" secondAttribute="bottom" id="g8t-ZR-0TV"/>
                             <constraint firstItem="iEi-EE-aIH" firstAttribute="leading" secondItem="TRD-V9-6JA" secondAttribute="leading" id="hRN-Fb-fXj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mVp-C9-yH3" secondAttribute="trailing" id="lfp-Dw-KsE"/>
                             <constraint firstItem="a2y-tD-GeF" firstAttribute="centerY" secondItem="Rat-2D-82B" secondAttribute="centerY" id="tgL-o0-HcB"/>
+                            <constraint firstItem="ade-0i-Oer" firstAttribute="top" secondItem="iEi-EE-aIH" secondAttribute="bottom" constant="12" id="zsg-wW-AGH"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

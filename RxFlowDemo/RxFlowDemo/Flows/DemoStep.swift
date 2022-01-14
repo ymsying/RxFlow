@@ -12,6 +12,7 @@ enum DemoStep: Step {
     // Global
     case logoutIsRequired
     case dashboardIsRequired
+    case tabSwitch(Int)
     case alert(String)
     case fakeStep
     case unauthorized
